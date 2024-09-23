@@ -20,6 +20,14 @@ return new class extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
+            $table->boolean('is_admin')->default(false);
+            $table->boolean('is_blocked')->default(false);
+            // status is enum('active', 'inactive', 'pending', 'blocked', 'deleted', 'banned', 'suspended')
+            $table->enum('status', ['active', 'inactive', 'pending', 'blocked', 'deleted', 'banned', 'suspended'])->default('pending');
+            $table->string('timezone')->default('UTC');
+            $table->string('locale')->default('en');
+            $table->string('theme')->default('light');
+            $table->string('currency')->default('USD');
             $table->timestamps();
         });
 

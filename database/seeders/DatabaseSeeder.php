@@ -19,6 +19,12 @@ class DatabaseSeeder extends Seeder
             'name' => 'Raihan Uddin',
             'email' => 'blackedition.me@gmail.com',
             'password' => bcrypt('password'),
+            'is_admin' => true,
+            'status' => 'active',
+            'timezone' => 'Asia/Dhaka',
+            'locale' => 'en',
+            'theme' => 'light',
+            'currency' => 'USD',
         ]);
         
         // CategorySeeder::class;
